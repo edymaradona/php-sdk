@@ -1,5 +1,5 @@
 {
-  "name": "mailscout/sdk",
+  "name": "mailscout/php-sdk",
   "description": "Mailscout php sdk",
   "keywords": ["mailscout"],
   "license": "MIT",
