@@ -16,7 +16,7 @@ class App extends ApiResource
      *
      * @return mixed
      */
-    public function getInstallApps()
+    public function getInstalledApps()
     {
         return $this->request->get(
             "{$this->getResourceName()}/installed-apps?api_token={$this->request->getApiKey()}"

@@ -38,13 +38,13 @@ class ApiResource
     }
 
     /**
-     * Create new resource.
+     * Add new resource.
      *
      * @param array $data
      *
      * @return object
      */
-    public function create($data = [])
+    public function add($data = [])
     {
         return $this->request->post(
             "{$this->getResourceName()}?api_token={$this->request->getApiKey()}",
@@ -95,13 +95,13 @@ class ApiResource
     }
 
     /**
-     * Delete existing resource.
+     * Remove existing resource.
      *
      * @param array $ids
      *
      * @return object
      */
-    public function delete($ids = [])
+    public function remove($ids = [])
     {
         return $this->request->delete(
             "{$this->getResourceName()}/bulk?api_token={$this->request->getApiKey()}",
@@ -124,7 +124,7 @@ class ApiResource
             $method,
             $this->request->getApiBaseUrl() . $url,
             $data
-        )->getBody();
+        );
     }
 
     /**

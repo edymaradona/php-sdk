@@ -18,7 +18,7 @@ class Webform extends ApiResource
      *
      * @return mixed
      */
-    public function getEmbed($id)
+    public function getEmbedWebform($id)
     {
         return $this->request->get(
             "{$this->getResourceName()}/embed/{$id}?api_token={$this->request->getApiKey()}"
@@ -51,7 +51,7 @@ class Webform extends ApiResource
      *
      * @return mixed
      */
-    public function giveWebformJS($id)
+    public function getWebformJS($id)
     {
         return $this->request->get(
             "{$this->getResourceName()}/assets/js/{$id}?api_token={$this->request->getApiKey()}"
