@@ -12,6 +12,18 @@ class Setting extends ApiResource
     protected $resource = 'settings';
 
     /**
+     * Get all settings.
+     *
+     * @return mixed
+     */
+    public function all()
+    {
+        return $this->request->get(
+            "{$this->getResourceName()}?api_token={$this->request->getApiKey()}"
+        );
+    }
+
+    /**
      * Update SMTP settings.
      *
      * @param array $data
