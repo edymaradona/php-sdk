@@ -20,7 +20,7 @@ class Subscriber extends ApiResource
      */
     public function subscribe($data = [])
     {
-        return $this->create($data);
+        return $this->add($data);
     }
 
     /**
