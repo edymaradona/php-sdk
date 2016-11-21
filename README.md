@@ -4,8 +4,16 @@
 
 ## Installation Process
 
+Just copy php-sdk folder somewhere into your project directory. Then include the autoload file.
+
+```php
+require_once('/path/to/php-sdk/autoload.php');
 ```
-composer require mailscout/php-sdk
+
+Mailscout php-sdk is also available via Composer/Packagist.
+
+```
+composer require sun/country
 ```
 
 ## Setup API Token
@@ -16,4 +24,4 @@ Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
 
 ## Basic Uses
 
-- [Subscriber](https://github.com/mailscout/php-sdk/master/docs/subscriber.md)
+- [Subscriber](https://github.com/mailscout/php-sdk/blob/master/docs/subscriber.md#subscriber)
