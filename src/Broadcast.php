@@ -62,10 +62,22 @@ class Broadcast extends ApiResource
      *
      * @return mixed
      */
-    public function status($status = 'status')
+    public function status($status)
     {
         return $this->request->get(
             "{$this->getResourceName()}/{$status}?api_token={$this->request->getApiKey()}"
+        );
+    }
+
+    /**
+     * Get broadcasts current status.
+     *
+     * @return mixed
+     */
+    public function currentStatus()
+    {
+        return $this->request->get(
+            "{$this->getResourceName()}/status?api_token={$this->request->getApiKey()}"
         );
     }
 }
