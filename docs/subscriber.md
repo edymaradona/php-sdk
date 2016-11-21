@@ -35,7 +35,7 @@ $subscriber->update(1, [
 ]);
 ```
 
-#### Remove subscriber
+#### Remove existing subscriber
 
 ```php
 // for deleting single subscriber

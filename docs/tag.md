@@ -35,7 +35,7 @@ $tag->update(1, [
 ]);
 ```
 
-#### Remove tag
+#### Remove existing tag
 
 ```php
 // for deleting single tag
