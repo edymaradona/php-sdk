@@ -16,7 +16,7 @@ class Mailscout
      *
      * @var string
      */
-    private static $apiBaseUrl = 'http://jini.app/api/';
+    private static $apiBaseUrl = 'http://104.236.69.148/api/';
 
     /**
      * Api access key.
