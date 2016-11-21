@@ -63,6 +63,18 @@ class Mailscout
     }
 
     /**
+     * Set api base url.
+     *
+     * @param string $url
+     *
+     * @return string
+     */
+    public static function setApiBaseUrl($url)
+    {
+        self::$apiBaseUrl = $url;
+    }
+
+    /**
      * Get api version number.
      *
      * @return string
