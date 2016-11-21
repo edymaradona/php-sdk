@@ -9,7 +9,7 @@ $subscriber = new \Mailscout\Subscriber();
 $suscriber->retrieve();
 ```
 
-#### Add subscriber
+#### Add a new subscriber
 
 ```php
 $subscriber->add([
@@ -17,7 +17,7 @@ $subscriber->add([
 ]);
 ```
 
-#### Get a subscriber details
+#### Get an existing subscriber details
 
 ```php
 $subscriber->get(1);
@@ -27,7 +27,7 @@ $subscriber->get(1);
 $subscriber->find(1);
 ```
 
-#### Update a existing subscriber
+#### Update an existing subscriber
 
 ```php
 $subscriber->update(1, [
