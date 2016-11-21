@@ -26,7 +26,7 @@ class Segment extends ApiResource
     }
 
     /**
-     * Get subscriber  preview based on segment data.
+     * Get subscriber preview based on segment data.
      *
      * @param array $data
      *
