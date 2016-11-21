@@ -16,7 +16,7 @@ class Template extends ApiResource
      *
      * @return mixed
      */
-    public function getAll()
+    public function all()
     {
         return $this->request->get(
             "{$this->getResourceName()}/all?api_token={$this->request->getApiKey()}"
