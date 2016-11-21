@@ -1,6 +1,6 @@
 ## Tag
 
-#### Get tag list
+#### Get tags list
 
 ```php
 \Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');

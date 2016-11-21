@@ -1,6 +1,6 @@
 ## Automation
 
-#### Get automation list
+#### Get automations list
 
 ```php
 \Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');

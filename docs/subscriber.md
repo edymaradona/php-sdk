@@ -1,6 +1,6 @@
 ## Subscriber
 
-#### Get subscriber list
+#### Get subscribers list
 
 ```php
 \Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');

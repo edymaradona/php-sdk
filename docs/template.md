@@ -1,6 +1,6 @@
 ## Template
 
-#### Get template list
+#### Get templates list
 
 ```php
 \Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');

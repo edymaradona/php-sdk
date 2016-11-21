@@ -1,6 +1,6 @@
 ## Webform
 
-#### Get webform list
+#### Get webforms list
 
 ```php
 \Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');

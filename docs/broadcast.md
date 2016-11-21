@@ -1,6 +1,6 @@
 ## Broadcast
 
-#### Get broadcast list
+#### Get broadcasts list
 
 ```php
 \Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
