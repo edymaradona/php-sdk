@@ -48,5 +48,5 @@ $tag->remove([1, 2, 3]);
 #### Get all tags without pagination
 
 ```php
-$tag->getAll()
+$tag->all()
 ```
