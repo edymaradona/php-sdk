@@ -1,7 +1,7 @@
 {
   "name": "mailscout/php-sdk",
-  "description": "Mailscout php sdk",
-  "keywords": ["mailscout"],
+  "description": "Email marketing and automation software for eCommerce",
+  "keywords": ["mailscout", "php", "php sdk"],
   "license": "MIT",
   "require": {
     "php": ">=5.5.0",

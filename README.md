@@ -1,6 +1,6 @@
 ## MailScout PHP SDK
 
-.... Description ....
+Email marketing and automation software for eCommerce.
 
 ## Installation Process
 
@@ -24,6 +24,5 @@ Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
 
 ## Basic Uses
 
-- [App](https://github.com/mailscout/php-sdk/blob/master/docs/app.md#app)
 - [Subscriber](https://github.com/mailscout/php-sdk/blob/master/docs/subscriber.md#subscriber)
 - [Tag](https://github.com/mailscout/php-sdk/blob/master/docs/tag.md#tag)
