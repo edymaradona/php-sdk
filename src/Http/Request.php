@@ -96,14 +96,15 @@ class Request extends Mailscout
      * @param string $url
      * @param array  $data
      *
-     * @return
+     * @return mixed
      * @throws Exception
+     * @throws NotFoundException
      * @throws ValidationException
      */
     public function call($method, $url, $data = [])
     {
         try {
-            return $this->httpClient->request($method, $url, $data)->getBody()->getContents();
+            return json_decode($this->httpClient->request($method, $url, $data)->getBody()->getContents());
         } catch(ClientException $e) {
 
             if( ($e->getCode() == 422) or ($e->getCode() == 22) or ($e->getCode() == 23) ) {
