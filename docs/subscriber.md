@@ -9,6 +9,12 @@ $subscriber = new \Mailscout\Subscriber();
 $suscriber->lists();
 ```
 
+###### Option parameters
+
+- limit ( default value 10 )
+- searchTerms
+- status
+
 #### Add a new subscriber
 
 ```php
@@ -16,6 +22,19 @@ $subscriber->add([
     'email' => 'mail@example.com'
 ]);
 ```
+
+###### Required field
+
+- email
+
+###### Option fields
+
+- first_name
+- last_name
+- country
+- ip
+- status
+- browser
 
 #### Get an existing subscriber details
 
