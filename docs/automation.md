@@ -1,18 +1,18 @@
-## Tag
+## Automation
 
-#### Get tag list
+#### Get automation list
 
 ```php
 \Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
 
-$tag = new \Mailscout\Tag();
-$tag->lists();
+$automation = new \Mailscout\Automation();
+$automation->lists();
 ```
 
-#### Add a new tag
+#### Add a new automation
 
 ```php
-$tag->add([
+$automation->add([
     'name' => 'my tag'
 ]);
 ```
