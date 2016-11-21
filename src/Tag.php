@@ -14,7 +14,7 @@ class Tag extends ApiResource
     /**
      * Get all tags.
      *
-     * @return mixed
+     * @return string
      */
     public function getAll()
     {

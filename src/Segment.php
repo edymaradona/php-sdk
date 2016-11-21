@@ -16,7 +16,7 @@ class Segment extends ApiResource
      *
      * @param int $id
      *
-     * @return mixed
+     * @return string
      */
     public function getSegmentedSubscribers($id)
     {
@@ -30,7 +30,7 @@ class Segment extends ApiResource
      *
      * @param array $data
      *
-     * @return mixed
+     * @return string
      */
     public function subscribersPreview($data)
     {

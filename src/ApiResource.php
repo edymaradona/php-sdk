@@ -28,7 +28,7 @@ class ApiResource
      * @param string $searchTerms
      * @param string $status
      *
-     * @return object
+     * @return string
      */
     public function retrieve($limit = 10, $searchTerms = '', $status = '')
     {
@@ -42,7 +42,7 @@ class ApiResource
      *
      * @param array $data
      *
-     * @return object
+     * @return string
      */
     public function add($data = [])
     {
@@ -58,7 +58,7 @@ class ApiResource
      * @param int   $id
      * @param array $data
      *
-     * @return object
+     * @return string
      */
     public function update($id, $data = [])
     {
@@ -73,7 +73,7 @@ class ApiResource
      *
      * @param int $id
      *
-     * @return object
+     * @return string
      */
     public function get($id)
     {
@@ -87,7 +87,7 @@ class ApiResource
      *
      * @param int $id
      *
-     * @return object
+     * @return string
      */
     public function find($id)
     {
@@ -99,7 +99,7 @@ class ApiResource
      *
      * @param array $ids
      *
-     * @return object
+     * @return string
      */
     public function remove($ids = [])
     {
@@ -116,7 +116,7 @@ class ApiResource
      * @param string $url
      * @param array $data
      *
-     * @return mixed
+     * @return string
      */
     protected function call($method, $url, $data = [])
     {
