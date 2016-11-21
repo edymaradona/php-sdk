@@ -16,7 +16,7 @@ class Setting extends ApiResource
      *
      * @param array $data
      *
-     * @return string
+     * @return mixed
      */
     public function setSMTP($data = [])
     {

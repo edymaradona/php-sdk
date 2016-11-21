@@ -16,7 +16,7 @@ class Subscriber extends ApiResource
      *
      * @param array $data
      *
-     * @return string
+     * @return mixed
      */
     public function subscribe($data = [])
     {
@@ -28,7 +28,7 @@ class Subscriber extends ApiResource
      *
      * @param string $token
      *
-     * @return string
+     * @return mixed
      */
     public function unsubscribe($token)
     {
@@ -42,7 +42,7 @@ class Subscriber extends ApiResource
      *
      * @param array $csv
      *
-     * @return string
+     * @return mixed
      */
     public function import($csv)
     {

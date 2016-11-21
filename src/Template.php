@@ -14,7 +14,7 @@ class Template extends ApiResource
     /**
      * Get all templates.
      *
-     * @return string
+     * @return mixed
      */
     public function getAll()
     {

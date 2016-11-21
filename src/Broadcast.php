@@ -45,7 +45,7 @@ class Broadcast extends ApiResource
      * @param int   $id
      * @param array $data
      *
-     * @return string
+     * @return mixed
      */
     public function send($id, $data = [])
     {
@@ -60,7 +60,7 @@ class Broadcast extends ApiResource
      *
      * @param string $status
      *
-     * @return string
+     * @return mixed
      */
     public function status($status)
     {
@@ -72,7 +72,7 @@ class Broadcast extends ApiResource
     /**
      * Get broadcasts current status.
      *
-     * @return string
+     * @return mixed
      */
     public function currentStatus()
     {

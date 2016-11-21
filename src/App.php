@@ -14,7 +14,7 @@ class App extends ApiResource
     /**
      * Get all installed apps.
      *
-     * @return string
+     * @return mixed
      */
     public function getInstalledApps()
     {
@@ -28,7 +28,7 @@ class App extends ApiResource
      *
      * @param int $id
      *
-     * @return string
+     * @return mixed
      */
     public function install($id)
     {
@@ -42,7 +42,7 @@ class App extends ApiResource
      *
      * @param int $id
      *
-     * @return string
+     * @return mixed
      */
     public function uninstall($id)
     {

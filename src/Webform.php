@@ -16,7 +16,7 @@ class Webform extends ApiResource
      *
      * @param int $id
      *
-     * @return string
+     * @return mixed
      */
     public function getEmbedWebform($id)
     {
@@ -31,7 +31,7 @@ class Webform extends ApiResource
      * @param int     $id webform id
      * @param string  $email subscriber email address
      *
-     * @return string
+     * @return mixed
      */
     public function addSubscriber($id, $email)
     {
@@ -49,7 +49,7 @@ class Webform extends ApiResource
      *
      * @param int $id webform id
      *
-     * @return string
+     * @return mixed
      */
     public function getWebformJS($id)
     {
@@ -63,7 +63,7 @@ class Webform extends ApiResource
      *
      * @param int  $id
      *
-     * @return string
+     * @return mixed
      */
     public function links($id)
     {
