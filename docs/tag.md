@@ -6,7 +6,7 @@
 \Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
 
 $tag = new \Mailscout\Tag();
-$tag->retrieve();
+$tag->lists();
 ```
 
 #### Add a new tag

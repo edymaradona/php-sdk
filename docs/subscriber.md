@@ -6,7 +6,7 @@
 \Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
 
 $subscriber = new \Mailscout\Subscriber();
-$suscriber->retrieve();
+$suscriber->lists();
 ```
 
 #### Add a new subscriber

@@ -30,7 +30,7 @@ class ApiResource
      *
      * @return mixed
      */
-    public function retrieve($limit = 10, $searchTerms = '', $status = '')
+    public function lists($limit = 10, $searchTerms = '', $status = '')
     {
         return $this->request->get(
             "{$this->getResourceName()}?limit={$limit}&searchTeams={$searchTerms}&status={$status}&api_token={$this->request->getApiKey()}"
