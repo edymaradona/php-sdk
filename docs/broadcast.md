@@ -102,7 +102,7 @@ $broadcast->status($status);
 
 ###### Available broadcast status
 
-- Drafted = Broadcast::$DRAFTED
-- Pending = Broadcast::$PENDING
-- Processing = Broadcast::$PROCESSING
-- Delivered = Broadcast::$DELIVERED
+- Broadcast::$DRAFTED
+- Broadcast::$PENDING
+- Broadcast::$PROCESSING
+- Broadcast::$DELIVERED
