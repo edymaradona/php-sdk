@@ -47,7 +47,7 @@ class Webform extends ApiResource
     /**
      * Get embed webform by the given id.
      *
-     * @param int     $id webform id
+     * @param int $id webform id
      *
      * @return mixed
      */
@@ -55,6 +55,20 @@ class Webform extends ApiResource
     {
         return $this->request->get(
             "{$this->getResourceName()}/assets/js/{$id}?api_token={$this->request->getApiKey()}"
+        );
+    }
+
+    /**
+     * Get webform links by the given webform id.
+     *
+     * @param int  $id
+     *
+     * @return mixed
+     */
+    public function links($id)
+    {
+        return $this->request->get(
+            "{$this->getResourceName()}/{$id}/copy-links?api_token={$this->request->getApiKey()}"
         );
     }
 }
