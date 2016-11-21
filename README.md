@@ -25,3 +25,4 @@ Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
 ## Basic Uses
 
 - [Subscriber](https://github.com/mailscout/php-sdk/blob/master/docs/subscriber.md#subscriber)
+- [Tag](https://github.com/mailscout/php-sdk/blob/master/docs/tag.md#tag)
