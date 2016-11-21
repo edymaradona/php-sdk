@@ -30,3 +30,4 @@ Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
 - [Subscriber](https://github.com/mailscout/php-sdk/blob/master/docs/subscriber.md#subscriber)
 - [Tag](https://github.com/mailscout/php-sdk/blob/master/docs/tag.md#tag)
 - [Template](https://github.com/mailscout/php-sdk/blob/master/docs/template.md#template)
+- [Webform](https://github.com/mailscout/php-sdk/blob/master/docs/webform.md#webform)
