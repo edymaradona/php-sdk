@@ -22,11 +22,11 @@ $automation->add([
 ]);
 ```
 
-###### Available Triggers
+###### Available trigger types
 
 - WEBFORM
 
-###### Available Actions
+###### Available action types
 
 - ADD TAG
 - REMOVE TAG
