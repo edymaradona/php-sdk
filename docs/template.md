@@ -9,6 +9,12 @@ $template = new \Mailscout\Template();
 $template->lists();
 ```
 
+###### Option parameters
+
+- limit ( default value 10 )
+- searchTerms ( default value null )
+- status ( default value null )
+
 #### Add a new template
 
 ```php

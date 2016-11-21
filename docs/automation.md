@@ -9,6 +9,12 @@ $automation = new \Mailscout\Automation();
 $automation->lists();
 ```
 
+###### Option parameters
+
+- limit ( default value 10 )
+- searchTerms ( default value null )
+- status ( default value null )
+
 #### Add a new automation
 
 ```php

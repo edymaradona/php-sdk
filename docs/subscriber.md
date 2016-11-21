@@ -12,8 +12,8 @@ $suscriber->lists();
 ###### Option parameters
 
 - limit ( default value 10 )
-- searchTerms
-- status
+- searchTerms ( default value null )
+- status ( default value null )
 
 #### Add a new subscriber
 

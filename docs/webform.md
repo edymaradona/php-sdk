@@ -9,6 +9,12 @@ $webform = new \Mailscout\Webform();
 $webform->lists();
 ```
 
+###### Option parameters
+
+- limit ( default value 10 )
+- searchTerms ( default value null )
+- status ( default value null )
+
 #### Add a new webform
 
 ```php

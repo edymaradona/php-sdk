@@ -9,11 +9,17 @@ $tag = new \Mailscout\Tag();
 $tag->lists();
 ```
 
+###### Option parameters
+
+- limit ( default value 10 )
+- searchTerms ( default value null )
+- status ( default value null )
+
 #### Add a new tag
 
 ```php
 $tag->add([
-    'name' => 'my tag'
+    'name' => 'Tag name'
 ]);
 ```
 
@@ -31,7 +37,7 @@ $tag->find(1);
 
 ```php
 $tag->update(1, [
-    'name' => 'my new tag'
+    'name' => 'My New Tag'
 ]);
 ```
 
