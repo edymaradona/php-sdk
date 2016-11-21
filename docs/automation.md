@@ -13,40 +13,30 @@ $automation->lists();
 
 ```php
 $automation->add([
-    'name' => 'my tag'
+    'triggers' => [
+        ['type' => 'WEBFORM', 'value' => 1]
+    ],
+    'actions' => [
+       ['type' => 'ADD TAG', 'value' => 1]
+    ],
 ]);
 ```
 
-#### Get an existing tag
+###### Available Triggers
+
+- WEBFORM
+
+###### Available Actions
+
+- ADD TAG
+- REMOVE TAG
+
+#### Remove existing automation
 
 ```php
-$tag->get(1);
+// for deleting single automation
+$automation->remove([1]);
 
-// or
-
-$tag->find(1);
-```
-
-#### Update an existing tag
-
-```php
-$tag->update(1, [
-    'name' => 'my new tag'
-]);
-```
-
-#### Remove existing tag
-
-```php
-// for deleting single tag
-$tag->remove([1]);
-
-// for deleting multiple tag
-$tag->remove([1, 2, 3]);
-```
-
-#### Get all tags without pagination
-
-```php
-$tag->all()
+// for deleting multiple automation
+$automation->remove([1, 2, 3]);
 ```
