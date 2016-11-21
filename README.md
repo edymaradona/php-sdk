@@ -32,3 +32,7 @@ Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
 - [Tag](https://github.com/mailscout/php-sdk/blob/master/docs/tag.md#tag)
 - [Template](https://github.com/mailscout/php-sdk/blob/master/docs/template.md#template)
 - [Webform](https://github.com/mailscout/php-sdk/blob/master/docs/webform.md#webform)
+
+## License
+
+This package is licensed under the [MIT License](https://github.com/mailscout/php-sdk/blob/master/LICENSE)
