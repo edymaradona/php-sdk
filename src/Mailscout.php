@@ -9,14 +9,14 @@ class Mailscout
      *
      * @var string
      */
-    private static $apiVersion = '0';
+    private static $apiVersion = 'v1';
 
     /**
      * Mailscout api base url.
      *
      * @var string
      */
-    private static $apiBaseUrl = 'http://104.236.69.148/api/';
+    private static $apiBaseUrl = 'http://104.236.69.148/api/v1/';
 
     /**
      * Api access key.
