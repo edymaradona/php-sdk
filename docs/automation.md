@@ -31,11 +31,14 @@ $automation->add([
 ###### Available trigger types
 
 - WEBFORM
+- SERVICE
+- ADD-TAG
 
 ###### Available action types
 
-- ADD TAG
+- ADD-TAG
 - REMOVE TAG
+- SEQUENCE SUBSCRIPTION
 
 #### Remove existing automation
 

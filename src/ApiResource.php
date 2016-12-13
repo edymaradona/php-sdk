@@ -4,7 +4,7 @@ namespace Mailscout;
 
 use Mailscout\Http\Request;
 
-class ApiResource
+abstract class ApiResource
 {
     /**
      * Instance of http request.
@@ -33,7 +33,7 @@ class ApiResource
     public function lists($limit = 10, $searchTerms = '', $status = '')
     {
         return $this->request->get(
-            "{$this->getResourceName()}?limit={$limit}&searchTeams={$searchTerms}&status={$status}&api_token={$this->request->getApiKey()}"
+            "{$this->getResourceName()}?limit={$limit}&searchTerms={$searchTerms}&status={$status}&api_token={$this->request->getApiKey()}"
         );
     }
 
