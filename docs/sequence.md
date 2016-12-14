@@ -52,6 +52,11 @@ $sequence->add([
 ###### Option fields
 - status ( Drafted, Published )
 
+#### Create dummy sequence
+
+```php
+$sequence->dummy();
+```
 
 #### Get an existing sequence details
 
@@ -109,12 +114,6 @@ $sequence->find(1)->subscribe($subscriberId);
 
 ```php
 $sequence->find(1)->unsubscribe($subscriberId);
-```
-
-#### Create dummy sequence
-
-```php
-$sequence->dummy();
 ```
 
 #### Get all sequences
