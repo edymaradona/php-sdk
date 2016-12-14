@@ -122,7 +122,7 @@ $sequence->find(1)->unsubscribe($subscriberId);
 $sequence->all();
 ```
 
-#### Add a new broadcast with sequence
+#### Add a new broadcast with an existing sequence
 
 ```php
 $sequence->find(1)->addBroadcast([
@@ -133,4 +133,10 @@ $sequence->find(1)->addBroadcast([
         'sequence_interval' => 8
     ]
 ]);
+```
+
+#### Remove broadcast from an existing sequence
+
+```php
+$sequence->find(1)->removeBroadcast(563);
 ```
