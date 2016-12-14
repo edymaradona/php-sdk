@@ -79,7 +79,7 @@ class Sequence  extends ApiResource
     }
 
     /**
-     * Add new broadcast.
+     * Add new broadcast with an existing sequence.
      *
      * @param array $data
      *
@@ -90,6 +90,20 @@ class Sequence  extends ApiResource
         return $this->request->post(
             "{$this->getResourceName()}/{$this->resourceId}/broadcasts?api_token={$this->request->getApiKey()}",
             $data
+        );
+    }
+
+    /**
+     * Remove new broadcast from an existing sequence.
+     *
+     * @param int $broadcastId
+     *
+     * @return mixed
+     */
+    public function removeBroadcast($broadcastId)
+    {
+        return $this->request->delete(
+            "{$this->getResourceName()}/{$this->resourceId}/broadcasts/{$broadcastId}?api_token={$this->request->getApiKey()}"
         );
     }
 }
