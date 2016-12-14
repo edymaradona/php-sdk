@@ -50,7 +50,7 @@ $sequence->add([
    - sequence_interval
 
 ###### Option fields
-- status
+- status ( Drafted, Published )
 
 
 #### Get an existing sequence details

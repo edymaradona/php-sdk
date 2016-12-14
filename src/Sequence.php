@@ -12,6 +12,21 @@ class Sequence  extends ApiResource
     protected $resource = 'sequences';
 
     /**
+     * Sequence status value as Drafted.
+     *
+     * @var string
+     */
+    public static $DRAFTED = 'Drafted';
+
+
+    /**
+     * Sequence status value as Published.
+     *
+     * @var string
+     */
+    public static $PUBLISHED = 'Published';
+
+    /**
      * Get all sequences.
      *
      * @return mixed
