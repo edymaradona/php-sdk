@@ -14,6 +14,20 @@ abstract class ApiResource
     protected $request;
 
     /**
+     * Resource ID.
+     *
+     * @var int
+     */
+    protected $resourceId;
+
+    /**
+     * Store resource data.
+     *
+     * @var string
+     */
+    protected $resourceData;
+
+    /**
      * Create a new instance of api resource.
      */
     public function __construct()
@@ -77,6 +91,8 @@ abstract class ApiResource
      */
     public function get($id)
     {
+        $this->resourceId = $id;
+
         return $this->request->get(
             "{$this->getResourceName()}/{$id}?api_token={$this->request->getApiKey()}"
         );
@@ -91,7 +107,9 @@ abstract class ApiResource
      */
     public function find($id)
     {
-        return $this->get($id);
+        $this->get($id);
+
+        return $this;
     }
 
     /**
@@ -135,5 +153,13 @@ abstract class ApiResource
     protected function getResourceName()
     {
         return $this->resource;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->resourceData;
     }
 }

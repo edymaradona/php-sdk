@@ -26,30 +26,28 @@ class Sequence  extends ApiResource
     /**
      * Sequence subscription by the given subscriber id.
      *
-     * @param int $sequenceId
      * @param int $subscriberId
      *
      * @return mixed
      */
-    public function subscription($sequenceId, $subscriberId)
+    public function subscribe($subscriberId)
     {
         return $this->request->post(
-            "{$this->getResourceName()}/{$sequenceId}/subscriber/{$subscriberId}/subscription?api_token={$this->request->getApiKey()}"
+            "{$this->getResourceName()}/{$this->resourceId}/subscriber/{$subscriberId}/subscribe?api_token={$this->request->getApiKey()}"
         );
     }
 
     /**
      * Sequence unsubscription by the given subscriber id.
      *
-     * @param int $sequenceId
      * @param int $subscriberId
      *
      * @return mixed
      */
-    public function unsubscription($sequenceId, $subscriberId)
+    public function unsubscribe($subscriberId)
     {
         return $this->request->delete(
-            "{$this->getResourceName()}/{$sequenceId}/subscriber/{$subscriberId}/unsubscription?api_token={$this->request->getApiKey()}"
+            "{$this->getResourceName()}/{$this->resourceId}/subscriber/{$subscriberId}/unsubscribe?api_token={$this->request->getApiKey()}"
         );
     }
 }

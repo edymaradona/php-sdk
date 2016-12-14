@@ -27,6 +27,7 @@ Mailscout::setApiKey('YOUR_MAILSCOUT_API_TOKEN');
 - [Automation](https://github.com/mailscout/php-sdk/blob/master/docs/automation.md#automation)
 - [Broadcast](https://github.com/mailscout/php-sdk/blob/master/docs/broadcast.md#broadcast)
 - [Segment](https://github.com/mailscout/php-sdk/blob/master/docs/segment.md#segment)
+- [Sequence](https://github.com/mailscout/php-sdk/blob/master/docs/sequence.md#sequence)
 - [Settings](https://github.com/mailscout/php-sdk/blob/master/docs/settings.md#settings)
 - [Subscriber](https://github.com/mailscout/php-sdk/blob/master/docs/subscriber.md#subscriber)
 - [Tag](https://github.com/mailscout/php-sdk/blob/master/docs/tag.md#tag)
