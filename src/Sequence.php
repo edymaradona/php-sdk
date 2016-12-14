@@ -73,7 +73,7 @@ class Sequence  extends ApiResource
      */
     public function dummy()
     {
-        return $this->request->delete(
+        return $this->request->post(
             "{$this->getResourceName()}/create-dummy?api_token={$this->request->getApiKey()}"
         );
     }
