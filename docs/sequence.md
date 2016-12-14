@@ -121,3 +121,16 @@ $sequence->find(1)->unsubscribe($subscriberId);
 ```php
 $sequence->all();
 ```
+
+#### Add a new broadcast with sequence
+
+```php
+$sequence->find(1)->addBroadcast([
+    'sequence_series_no' => 5,
+    'broadcast' => [
+        'subject' => '20% OFF',
+        'body' => 'Discount...',
+        'sequence_interval' => 8
+    ]
+]);
+```
