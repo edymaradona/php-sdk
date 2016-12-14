@@ -77,4 +77,19 @@ class Sequence  extends ApiResource
             "{$this->getResourceName()}/create-dummy?api_token={$this->request->getApiKey()}"
         );
     }
+
+    /**
+     * Add new broadcast.
+     *
+     * @param array $data
+     *
+     * @return mixed
+     */
+    public function addBroadcast(array $data)
+    {
+        return $this->request->post(
+            "{$this->getResourceName()}/{$this->resourceId}/broadcasts?api_token={$this->request->getApiKey()}",
+            $data
+        );
+    }
 }
