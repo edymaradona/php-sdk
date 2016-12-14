@@ -65,4 +65,16 @@ class Sequence  extends ApiResource
             "{$this->getResourceName()}/{$this->resourceId}/subscriber/{$subscriberId}/unsubscribe?api_token={$this->request->getApiKey()}"
         );
     }
+
+    /**
+     * Create dummy sequence.
+     *
+     * @return mixed
+     */
+    public function dummy()
+    {
+        return $this->request->delete(
+            "{$this->getResourceName()}/create-dummy?api_token={$this->request->getApiKey()}"
+        );
+    }
 }

@@ -111,6 +111,12 @@ $sequence->find(1)->subscribe($subscriberId);
 $sequence->find(1)->unsubscribe($subscriberId);
 ```
 
+#### Create dummy sequence
+
+```php
+$sequence->dummy();
+```
+
 #### Get all sequences
 
 ```php
