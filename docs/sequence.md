@@ -23,6 +23,7 @@ $sequence->add([
     'from_name' => 'Mailscout Team',
     'from_email' => 'team@mailscout.io',
     'reply_email' => 'team@mailscout.io',
+    'status' => 'Published',
     'sequences' => [
         [
             'subject' => 'Sequence Email One',
@@ -108,6 +109,23 @@ $sequence->remove([1, 2, 3]);
 
 ```php
 $sequence->find(1)->subscribe($subscriberId);
+```
+
+#### Sequence subscription with custom field data
+
+```php
+$sequence->find($sequenceId)->subscribe($subscriberId, [
+    'product_id' => 1, // you can access this data from your broadcast email body via {{ $product_id }}
+    'product_name' => 'eBook', // {{ $product_name }}
+    'price' => 250 // {{ $price }}
+]);
+```
+
+#### Changing current sequence no
+
+```php
+// Let, this sequence has 5 broadcast email
+$sequence->find($sequenceId)->subscribe($subscriberId, [], 2); // the subscriber will get email from 2nd broadcast email of this sequence
 ```
 
 #### Sequence unsubscription

@@ -23,7 +23,7 @@ $automation->add([
         ['type' => 'WEBFORM', 'value' => 1]
     ],
     'actions' => [
-       ['type' => 'ADD TAG', 'value' => 1]
+       ['type' => 'ADD-TAG', 'value' => 1]
     ],
 ]);
 ```

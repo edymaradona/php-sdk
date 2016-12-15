@@ -41,15 +41,21 @@ class Sequence  extends ApiResource
     /**
      * Sequence subscription by the given subscriber id.
      *
-     * @param int $subscriberId
+     * @param int    $subscriberId
+     * @param array  $templateData
+     * @param int    $currentSequenceNO
+     * @param string $nextSequenceDate
      *
      * @return mixed
      */
-    public function subscribe($subscriberId)
+    public function subscribe($subscriberId, array $templateData = [], $currentSequenceNO = 0, $nextSequenceDate = '')
     {
         return $this->request->post(
-            "{$this->getResourceName()}/{$this->resourceId}/subscriber/{$subscriberId}/subscribe?api_token={$this->request->getApiKey()}"
-        );
+            "{$this->getResourceName()}/{$this->resourceId}/subscriber/{$subscriberId}/subscribe?api_token={$this->request->getApiKey()}", [
+                'template_data' => $templateData,
+                'current_sequence_no' => $currentSequenceNO,
+                'next_sequence_date' => $nextSequenceDate
+        ]);
     }
 
     /**
