@@ -13,7 +13,7 @@ require_once('/path/to/php-sdk/autoload.php');
 Mailscout php-sdk is also available via Composer/Packagist.
 
 ```
-composer require sun/country
+composer require mailscout/php-sdk
 ```
 
 ## Setup API Token
