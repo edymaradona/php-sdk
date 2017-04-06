@@ -112,4 +112,30 @@ class Sequence  extends ApiResource
             "{$this->getResourceName()}/{$this->resourceId}/broadcasts/{$broadcastId}?api_token={$this->request->getApiKey()}"
         );
     }
+
+    /**
+     * Get sequence stats.
+     *
+     * @param int $sequenceId
+     * @return mixed
+     */
+    public function stats($sequenceId)
+    {
+        return $this->request->get(
+            "{$this->getResourceName()}/{$sequenceId}/reports/stats?api_token={$this->request->getApiKey()}"
+        );
+    }
+
+    /**
+     * Get sequence overview.
+     *
+     * @param int $sequenceId
+     * @return mixed
+     */
+    public function overview($sequenceId)
+    {
+        return $this->request->get(
+            "{$this->getResourceName()}/{$sequenceId}/reports/overview?api_token={$this->request->getApiKey()}"
+        );
+    }
 }
