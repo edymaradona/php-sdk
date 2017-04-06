@@ -27,13 +27,13 @@ class Subscriber extends ApiResource
      * Subscriber unsubscribe.
      *
      * @param string $token
-     *
+     * @param string $broadcastId
      * @return mixed
      */
-    public function unsubscribe($token)
+    public function unsubscribe($token, $broadcastId)
     {
         return $this->request->get(
-            "unsubscription/{$token}?api_token={$this->request->getApiKey()}"
+            "unsubscription/{$token}/{$broadcastId}?api_token={$this->request->getApiKey()}"
         );
     }
 
@@ -49,6 +49,37 @@ class Subscriber extends ApiResource
         return $this->request->post(
             "{$this->getResourceName()}/csv/import?api_token={$this->request->getApiKey()}",
             ['csv' => $csv]
+        );
+    }
+
+    /**
+     * Get subscribers growth.
+     *
+     * @return mixed
+     */
+    public function growth()
+    {
+        return $this->request->get(
+            "subscribers-growth?api_token={$this->request->getApiKey()}"
+        );
+    }
+
+    /**
+     * Get subscribers population.
+     *
+     * @param null $hook
+     * @return mixed
+     */
+    public function population($hook = null)
+    {
+        if(is_null($hook)) {
+            return $this->request->get(
+                "subscribers-population?api_token={$this->request->getApiKey()}"
+            );
+        }
+
+        return $this->request->get(
+            "subscribers-population/{hook?}?api_token={$this->request->getApiKey()}"
         );
     }
 }
