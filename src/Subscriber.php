@@ -79,7 +79,7 @@ class Subscriber extends ApiResource
         }
 
         return $this->request->get(
-            "subscribers-population/{hook?}?api_token={$this->request->getApiKey()}"
+            "subscribers-population/{$hook}?api_token={$this->request->getApiKey()}"
         );
     }
 }
