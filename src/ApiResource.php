@@ -91,7 +91,7 @@ abstract class ApiResource
      */
     public function get($id = null)
     {
-        if(is_nan($id)) {
+        if(is_null($id)) {
             return $this->request->get(
                 "{$this->getResourceName()}?api_token={$this->request->getApiKey()}"
             );
