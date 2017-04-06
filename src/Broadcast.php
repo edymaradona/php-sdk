@@ -80,4 +80,43 @@ class Broadcast extends ApiResource
             "{$this->getResourceName()}/status?api_token={$this->request->getApiKey()}"
         );
     }
+
+    /**
+     * Unschedule broadcast.
+     *
+     * @param int $id
+     * @return mixed
+     */
+    public function unschedule($id)
+    {
+        return $this->request->delete(
+            "{$this->getResourceName()}/unschedule/{$id}?api_token={$this->request->getApiKey()}"
+        );
+    }
+
+    /**
+     * Create a duplicate broadcast by the given broadcast id.
+     *
+     * @param int $id
+     * @return mixed
+     */
+    public function duplicate($id)
+    {
+        return $this->request->post(
+            "{$this->getResourceName()}/{$id}/duplicate?api_token={$this->request->getApiKey()}"
+        );
+    }
+
+    /**
+     * Get public broadcast by the given broadcast unique id.
+     *
+     * @param string $uniqueId
+     * @return mixed
+     */
+    public function getPublicBroadcast($uniqueId)
+    {
+        return $this->request->get(
+            "{$this->getResourceName()}/public/{$uniqueId}?api_token={$this->request->getApiKey()}"
+        );
+    }
 }
