@@ -71,4 +71,16 @@ class Webform extends ApiResource
             "{$this->getResourceName()}/{$id}/copy-links?api_token={$this->request->getApiKey()}"
         );
     }
+
+    /**
+     * Get webform overview.
+     *
+     * @return mixed
+     */
+    public function overview()
+    {
+        return $this->request->get(
+            "{$this->getResourceName()}/overview?api_token={$this->request->getApiKey()}"
+        );
+    }
 }
