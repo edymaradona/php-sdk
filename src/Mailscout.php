@@ -16,7 +16,7 @@ class Mailscout
      *
      * @var string
      */
-    private static $apiBaseUrl = 'http://104.236.69.148/api/v1/';
+    private static $apiBaseUrl = 'http://localhost:8000/api/v1/';
 
     /**
      * Api access key.

@@ -28,7 +28,8 @@ class Request extends Mailscout
             'base_uri' => $this->getApiBaseUrl(),
             'headers' => [
                 'Accept'     => 'application/json'
-            ]
+            ],
+            'verify' => false
         ]);
     }
 
@@ -105,7 +106,7 @@ class Request extends Mailscout
     {
         try {
             return json_decode(
-                $this->httpClient->request($method, $url, $data)
+                $this->httpClient->request($method, Mailscout::getApiBaseUrl() . $url, $data)
                     ->getBody()->getContents()
             );
         } catch(ClientException $e) {
@@ -129,6 +130,7 @@ class Request extends Mailscout
                 $e->getCode()
             );
         } catch(BaseException $e) {
+            var_dump($e->getMessage());
             throw new Exception(
                 $e->getResponse()->getBody()->getContents(),
                 $e->getCode()
