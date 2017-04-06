@@ -62,13 +62,13 @@ class Sequence  extends ApiResource
      * Sequence unsubscription by the given subscriber id.
      *
      * @param int $subscriberId
-     *
+     * @param int $broadcastId
      * @return mixed
      */
-    public function unsubscribe($subscriberId)
+    public function unsubscribe($subscriberId, $broadcastId)
     {
         return $this->request->delete(
-            "{$this->getResourceName()}/{$this->resourceId}/subscriber/{$subscriberId}/unsubscribe?api_token={$this->request->getApiKey()}"
+            "{$this->getResourceName()}/{$this->resourceId}/subscriber/{$subscriberId}/broadcasts/{$broadcastId}/unsubscribe?api_token={$this->request->getApiKey()}"
         );
     }
 
