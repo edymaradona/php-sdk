@@ -39,4 +39,16 @@ class Segment extends ApiResource
             $data
         );
     }
+
+    /**
+     * Get all segments.
+     *
+     * @return mixed
+     */
+    public function all()
+    {
+        return $this->request->get(
+            "{$this->getResourceName()}/all?api_token={$this->request->getApiKey()}"
+        );
+    }
 }
