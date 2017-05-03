@@ -25,7 +25,7 @@ class Request extends Mailscout
     public function __construct()
     {
         $this->httpClient = new HttpClient([
-            'base_uri' => $this->getApiBaseUrl(),
+            //'base_uri' => static::getApiBaseUrl(),
             'headers' => [
                 'Accept'     => 'application/json'
             ],
@@ -106,7 +106,7 @@ class Request extends Mailscout
     {
         try {
             return json_decode(
-                $this->httpClient->request($method, Mailscout::getApiBaseUrl() . $url, $data)
+                $this->httpClient->request($method, static::getApiBaseUrl() . "/{$url}" , $data)
                     ->getBody()->getContents(), true
             );
         } catch(ClientException $e) {
@@ -130,7 +130,6 @@ class Request extends Mailscout
                 $e->getCode()
             );
         } catch(BaseException $e) {
-            var_dump($e->getMessage());
             throw new Exception(
                 $e->getResponse()->getBody()->getContents(),
                 $e->getCode()

@@ -71,7 +71,7 @@ class Mailscout
      */
     public static function setApiBaseUrl($url)
     {
-        self::$apiBaseUrl = $url;
+        static::$apiBaseUrl = $url;
     }
 
     /**
