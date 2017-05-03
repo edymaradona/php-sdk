@@ -29,12 +29,16 @@ class Subscriber extends ApiResource
         if(is_int($param)) {
             $this->resourceId = $param;
 
-            return $this->request->get(
+            $this->resourceData = $this->request->get(
                 "{$this->getResourceName()}/{$param}?api_token={$this->request->getApiKey()}"
             );
+
+            return $this;
         }
 
-        $response =  $this->lists(1, $param);
+        $response = $this->lists(1, $param);
+
+        $this->resourceId = $response["data"][0]['id'];
 
         $tags = $response["data"][0]["tags"];
 
@@ -42,10 +46,12 @@ class Subscriber extends ApiResource
 
         $subscriber = $response["data"][0];
 
-        return [
+        $this->resourceData = [
             "subscriber" => $subscriber,
             "tags" => $tags
         ];
+
+        return $this;
     }
 
     /**

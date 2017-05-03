@@ -36,6 +36,28 @@ abstract class ApiResource
     }
 
     /**
+     * Update an existing resource.
+     *
+     * @param array $data
+     * @param int   $id
+     *
+     * @return mixed
+     */
+    public function update($data = [], $id = null)
+    {
+        if(!is_int($this->resourceId)) {
+            $this->resourceId = $id;
+        }
+
+        $this->resourceData = $this->request->put(
+            "{$this->getResourceName()}/{$this->resourceId}?api_token={$this->request->getApiKey()}",
+            $data
+        );
+
+        return $this;
+    }
+
+    /**
      * Retrieve resource.
      *
      * @param int    $limit
@@ -67,22 +89,6 @@ abstract class ApiResource
     }
 
     /**
-     * Update an existing resource.
-     *
-     * @param int   $id
-     * @param array $data
-     *
-     * @return mixed
-     */
-    public function update($id, $data = [])
-    {
-        return $this->request->put(
-            "{$this->getResourceName()}/{$id}?api_token={$this->request->getApiKey()}",
-            $data
-        );
-    }
-
-    /**
      * Get a resource by the given resource id.
      *
      * @param int $id
@@ -92,16 +98,18 @@ abstract class ApiResource
     public function get($id = null)
     {
         if(is_null($id)) {
-            return $this->request->get(
+            $this->resourceData = $this->request->get(
                 "{$this->getResourceName()}?api_token={$this->request->getApiKey()}"
             );
         }
 
         $this->resourceId = $id;
 
-        return $this->request->get(
+        $this->resourceData = $this->request->get(
             "{$this->getResourceName()}/{$id}?api_token={$this->request->getApiKey()}"
         );
+
+        return $this;
     }
 
     /**
@@ -127,6 +135,10 @@ abstract class ApiResource
      */
     public function remove($ids = [])
     {
+        if(empty($ids) and is_int($this->resourceId)) {
+            $ids[] = $this->resourceId;
+        }
+
         return $this->request->delete(
             "{$this->getResourceName()}/bulk?api_token={$this->request->getApiKey()}",
             ['ids' => $ids]
@@ -162,10 +174,20 @@ abstract class ApiResource
     }
 
     /**
+     * Get resource data in array.
+     *
+     * @return mixed
+     */
+    public function toArray()
+    {
+        return json_decode(json_encode($this->resourceData), true);
+    }
+
+    /**
      * @return string
      */
     public function __toString()
     {
-        return $this->resourceData;
+        return json_encode($this->resourceData);
     }
 }
