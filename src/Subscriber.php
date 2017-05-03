@@ -12,6 +12,43 @@ class Subscriber extends ApiResource
     protected $resource = 'subscribers';
 
     /**
+     * Get a resource by the given resource id.
+     *
+     * @param int|string $param
+     *
+     * @return mixed
+     */
+    public function get($param = null)
+    {
+        if(is_null($param)) {
+            return $this->request->get(
+                "{$this->getResourceName()}?api_token={$this->request->getApiKey()}"
+            );
+        }
+
+        if(is_int($param)) {
+            $this->resourceId = $param;
+
+            return $this->request->get(
+                "{$this->getResourceName()}/{$param}?api_token={$this->request->getApiKey()}"
+            );
+        }
+
+        $response =  $this->lists(1, $param);
+
+        $tags = $response["data"][0]["tags"];
+
+        unset($response["data"][0]["tags"]);
+
+        $subscriber = $response["data"][0];
+
+        return [
+            "subscriber" => $subscriber,
+            "tags" => $tags
+        ];
+    }
+
+    /**
      * Subscriber subscribe.
      *
      * @param array $data
