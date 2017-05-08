@@ -107,7 +107,7 @@ class Request extends Mailscout
         try {
             return json_decode(
                 $this->httpClient->request($method, static::getApiBaseUrl() . "/{$url}" , $data)
-                    ->getBody()->getContents(), true
+                    ->getBody()->getContents()
             );
         } catch(ClientException $e) {
 

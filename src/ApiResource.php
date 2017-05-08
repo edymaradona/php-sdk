@@ -82,10 +82,20 @@ abstract class ApiResource
      */
     public function add($data = [])
     {
-        return $this->request->post(
+        $this->resourceData = $this->request->post(
             "{$this->getResourceName()}?api_token={$this->request->getApiKey()}",
             $data
         );
+
+        if(property_exists($this->resourceData, 'data')) {
+            $data = $this->resourceData->data;
+
+            unset($this->resourceData->data);
+
+            $this->resourceData = (object) array_merge((array) $this->resourceData, (array) $data);
+        }
+
+        return $this->resourceData;
     }
 
     /**

@@ -12,6 +12,13 @@ class Subscriber extends ApiResource
     protected $resource = 'subscribers';
 
     /**
+     * Subscriber id.
+     *
+     * @var int
+     */
+    public $id;
+
+    /**
      * Get a resource by the given resource id.
      *
      * @param int|string $param
@@ -38,13 +45,28 @@ class Subscriber extends ApiResource
 
         $response = $this->lists(1, $param);
 
-        $this->resourceId = $response["data"][0]['id'];
+        if(empty($response->data[0])) {
+            $this->id = 0;
 
-        $tags = $response["data"][0]["tags"];
+            $this->resourceId = 0;
 
-        unset($response["data"][0]["tags"]);
+            $this->resourceData = [
+                "subscriber" => null,
+                "tags" => []
+            ];
 
-        $subscriber = $response["data"][0];
+            return $this;
+        }
+
+        $this->resourceId = $response->data[0]->id;
+
+        $this->id = $response->data[0]->id;
+
+        $tags = $response->data[0]->tags;
+
+        unset($response->data[0]->tags);
+
+        $subscriber = $response->data[0];
 
         $this->resourceData = [
             "subscriber" => $subscriber,
@@ -124,5 +146,37 @@ class Subscriber extends ApiResource
         return $this->request->get(
             "subscribers-population/{$hook}?api_token={$this->request->getApiKey()}"
         );
+    }
+
+    /**
+     * Attach tags with the current subscriber.
+     *
+     * @param array $names
+     * @return $this
+     */
+    public function addTags(array $names)
+    {
+        $this->resourceData = $this->request->post(
+            "subscribers/{$this->id}/tags?api_token={$this->request->getApiKey()}",
+            ["tags" => $names]
+        );
+
+        return $this;
+    }
+
+    /**
+     * Detach tags from the current subscriber.
+     *
+     * @param array $names
+     * @return $this
+     */
+    public function removeTags(array $names)
+    {
+        $this->resourceData = $this->request->delete(
+            "subscribers/{$this->id}/tags?api_token={$this->request->getApiKey()}",
+            ["tags" => $names]
+        );
+
+        return $this;
     }
 }
