@@ -105,10 +105,9 @@ class Request extends Mailscout
     public function call($method, $url, $data = [])
     {
         try {
-            return json_decode(
-                $this->httpClient->request($method, static::getApiBaseUrl() . "/{$url}" , $data)
-                    ->getBody()->getContents()
-            );
+            $request = $this->httpClient->request($method, static::getApiBaseUrl() . "/{$url}" , $data);
+
+            return json_decode($request->getBody()->getContents());
         } catch(ClientException $e) {
 
             if( ($e->getCode() == 422) or ($e->getCode() == 22) or ($e->getCode() == 23) ) {
@@ -130,6 +129,13 @@ class Request extends Mailscout
                 $e->getCode()
             );
         } catch(BaseException $e) {
+            if(is_null($e->getResponse())) {
+                throw new Exception(
+                    "Unable to connect to the server",
+                    500
+                );
+            }
+
             throw new Exception(
                 $e->getResponse()->getBody()->getContents(),
                 $e->getCode()
